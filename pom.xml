@@ -37,6 +37,7 @@
 						<password>${password}</password>
 						<applicationName>releasepipeline</applicationName>
 						<environment>${environment}</environment>
+						<region>us-east-2</region>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
