@@ -37,7 +37,7 @@
 						<muleVersion>4.4.0</muleVersion>
 						<applicationName>maven-azure-deployment</applicationName>
 						<workers>1</workers>
-						<environment>${env}</environment>
+						<environment>Dev</environment>
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
