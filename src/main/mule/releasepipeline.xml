@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<configuration-properties doc:name="Configuration properties" doc:id="e23ecfa7-5e7c-4b1d-b319-46ce8ff4ded9" file="${environment}.properties" />
-	<global-property doc:name="Global Property" doc:id="a442989b-f118-4714-82e2-768612e6345d" name="env" value="Dev" />
+	<global-property doc:name="Global Property" doc:id="a442989b-f118-4714-82e2-768612e6345d" name="environment" value="Dev" />
 	<flow name="releasepipelineFlow" doc:id="e7b88981-36d8-48bd-823a-be3ee0f4f4df" >
 		<http:listener doc:name="Listener" doc:id="9dd89f66-7790-4151-bec2-e7672be5915c" config-ref="HTTP_Listener_config" path="/api"/>
 		<ee:transform doc:name="Transform Message" doc:id="74b30e7f-6603-4919-9180-146e69e720ed" >
