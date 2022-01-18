@@ -4,11 +4,7 @@
 
 	<groupId>com.mycompany</groupId>
 	<artifactId>releasepipeline</artifactId>
-<<<<<<< Updated upstream
-	<version>1.0.0-SNAPSHOT</version>
-=======
 	<version>1.0.1-SNAPSHOT</version>
->>>>>>> Stashed changes
 	<packaging>mule-application</packaging>
 
 	<name>releasepipeline</name>
