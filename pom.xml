@@ -4,7 +4,11 @@
 
 	<groupId>com.mycompany</groupId>
 	<artifactId>releasepipeline</artifactId>
+<<<<<<< Updated upstream
 	<version>1.0.0-SNAPSHOT</version>
+=======
+	<version>1.0.1-SNAPSHOT</version>
+>>>>>>> Stashed changes
 	<packaging>mule-application</packaging>
 
 	<name>releasepipeline</name>
@@ -15,6 +19,7 @@
 
 		<app.runtime>4.4.0</app.runtime>
 		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
+		<munit.version>2.3.6</munit.version>
 	</properties>
 
 	<build>
@@ -44,6 +49,49 @@
 							<environment>${environment}</environment>
 						</properties>
 					</cloudHubDeployment>
+					<coverage>
+            			<runCoverage>true</runCoverage>
+            			<failBuild>false</failBuild>
+
+            			<requiredApplicationCoverage>75</requiredApplicationCoverage>
+            			<requiredResourceCoverage>50</requiredResourceCoverage>
+            			<requiredFlowCoverage>50</requiredFlowCoverage>
+
+            			<formats>
+                			<format>console</format>
+                			<format>html</format>
+            			</formats>
+        			</coverage>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.mulesoft.munit.tools</groupId>
+				<artifactId>munit-maven-plugin</artifactId>
+				<version>${munit.version}</version>
+				<executions>
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+							<goal>coverage-report</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<coverage>
+						<runCoverage>true</runCoverage>
+            			<failBuild>false</failBuild>
+
+            			<requiredApplicationCoverage>75</requiredApplicationCoverage>
+            			<requiredResourceCoverage>50</requiredResourceCoverage>
+            			<requiredFlowCoverage>50</requiredFlowCoverage>
+
+            			<formats>
+                			<format>console</format>
+                			<format>html</format>
+            			</formats>
+            		</coverage>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -56,22 +104,47 @@
 			<version>1.5.25</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-apikit-module</artifactId>
+			<version>1.5.5</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-runner</artifactId>
+			<version>2.3.6</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-tools</artifactId>
+			<version>2.3.6</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.weave</groupId>
+			<artifactId>assertions</artifactId>
+			<version>1.0.2</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
-    
 	<repositories>
-			<repository>
-				<id>anypoint-exchange-v2</id>
-				<name>Anypoint Exchange</name>
-				<url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
-				<layout>default</layout>
-			</repository>
-			<repository>
-				<id>mulesoft-releases</id>
-				<name>MuleSoft Releases Repository</name>
-				<url>https://repository.mulesoft.org/releases/</url>
-				<layout>default</layout>
-			</repository>
+		<repository>
+			<id>anypoint-exchange-v2</id>
+			<name>Anypoint Exchange</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases Repository</name>
+			<url>https://repository.mulesoft.org/releases/</url>
+			<layout>default</layout>
+		</repository>
 	</repositories>
 
 	<pluginRepositories>
