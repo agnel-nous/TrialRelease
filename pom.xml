@@ -41,9 +41,6 @@
 						<workers>${workers}</workers>
 						<workerType>${workerType}</workerType>
 						<objectStoreV2>true</objectStoreV2>
-						<properties>
-							<environment>${environment}</environment>
-						</properties>
 					</cloudHubDeployment>
 					<coverage>
             			<runCoverage>true</runCoverage>
